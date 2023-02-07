@@ -7,14 +7,23 @@
     :hint-icon="$getHintIcon()"
     :required="$isRequired()"
     :state-path="$getStatePath()"
-    class="{{ $isLabelHidden() && !$hasInlineLabel() ? 'drop-in-action-component w-full h-full flex items-center justify-between' : null }}"
+    @class([
+        'drop-in-action-component',
+        'w-full h-full flex items-end justify-between' => $isLabelHidden() && ! $hasInlineLabel()
+    ])
 >
-    <div class="{{ $isLabelHidden() && ! $hasInlineLabel() ? 'relative bottom-0' : null }}">
+    <div
+        class="drop-in-action-actions-container relative"
+        @if ($isLabelHidden() && ! $hasInlineLabel())
+            style="padding-block-end: 1px;"
+        @endif
+    >
         @foreach ($getExecutableActions() as $executableAction)
             <x-forms::actions.action
                 :action="$executableAction"
                 class="flex items-center"
-                component="forms::button">
+                component="forms::button"
+            >
                 @if (!$executableAction->isLabelHidden())
                     {{ $executableAction->getLabel() }}
                 @endif
