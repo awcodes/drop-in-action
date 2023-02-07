@@ -2,9 +2,7 @@
     "private": true,
     "scripts": {
         "dev:styles": "npx tailwindcss -i resources/css/plugin.css -o resources/dist/drop-in-action.css --postcss --watch",
-        "dev:scripts": "esbuild resources/js/plugin.js --bundle --sourcemap=inline --outfile=resources/dist/drop-in-action.js --watch",
         "build:styles": "npx tailwindcss -i resources/css/plugin.css -o resources/dist/drop-in-action.css --postcss --minify && npm run purge",
-        "build:scripts": "esbuild resources/js/plugin.js --bundle --minify --outfile=resources/dist/drop-in-action.js",
         "purge": "filament-purge -i resources/dist/drop-in-action.css -o resources/dist/drop-in-action.css",
         "dev": "npm-run-all --parallel dev:*",
         "build": "npm-run-all build:*"
@@ -17,6 +15,6 @@
         "postcss": "^8.4.14",
         "prettier": "^2.7.1",
         "prettier-plugin-tailwindcss": "^0.1.13",
-        "tailwindcss": "^3.1.6"
+        "tailwindcss": "^3.2.4"
     }
 }
