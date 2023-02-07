@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/awcodes/drop-in-action.svg?style=flat-square)](https://packagist.org/packages/awcodes/drop-in-action)
 [![Total Downloads](https://img.shields.io/packagist/dt/awcodes/drop-in-action.svg?style=flat-square)](https://packagist.org/packages/awcodes/drop-in-action)
+![drop-in-action](https://user-images.githubusercontent.com/3596800/217309146-b640e169-18df-4329-a2dc-f806c6cfad84.jpg)
 
 A form component for Filament allowing actions inside of forms.
 
