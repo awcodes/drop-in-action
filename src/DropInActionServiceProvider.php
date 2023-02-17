@@ -2,17 +2,15 @@
 
 namespace Awcodes\DropInAction;
 
-use Filament\PluginServiceProvider;
 use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class DropInActionServiceProvider extends PluginServiceProvider
+class DropInActionServiceProvider extends PackageServiceProvider
 {
-    public static string $name = 'drop-in-action';
-
     public function configurePackage(Package $package): void
     {
         $package
-            ->name(static::$name)
+            ->name('drop-in-action')
             ->hasViews();
     }
 }

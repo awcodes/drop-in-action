@@ -10,7 +10,8 @@ use Illuminate\Support\Arr;
 class DropInAction extends Field
 {
     /** @var array<Action|Closure> */
-    protected array $actions          = [];
+    protected array $actions = [];
+
     private array   $evaluatedActions = [];
 
     protected string $view = 'drop-in-action::components.drop-in-action';

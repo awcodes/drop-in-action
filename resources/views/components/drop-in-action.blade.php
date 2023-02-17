@@ -1,33 +1,26 @@
-<x-forms::field-wrapper
-    :id="$getId()"
-    :label="$getLabel()"
-    :label-sr-only="$isLabelHidden()"
-    :helper-text="$getHelperText()"
-    :hint="$getHint()"
-    :hint-icon="$getHintIcon()"
-    :required="$isRequired()"
-    :state-path="$getStatePath()"
+@php
+    $isLabelHidden = $isLabelHidden();
+    $hasInlineLabel = $hasInlineLabel();
+@endphp
+
+<x-dynamic-component
+    :component="$getFieldWrapperView()"
+    :field="$field"
     @class([
         'drop-in-action-component',
-        'w-full h-full flex items-end justify-between' => $isLabelHidden() && ! $hasInlineLabel()
+        'w-full h-full flex items-end justify-between' => $isLabelHidden && ! $hasInlineLabel
     ])
 >
     <div
-        class="drop-in-action-actions-container relative"
-        @if ($isLabelHidden() && ! $hasInlineLabel())
+        class="drop-in-action-actions-container relative flex items-center"
+        @if ($isLabelHidden && ! $hasInlineLabel)
             style="padding-block-end: 1px;"
         @endif
     >
         @foreach ($getExecutableActions() as $executableAction)
-            <x-forms::actions.action
-                :action="$executableAction"
-                class="flex items-center"
-                component="forms::button"
-            >
-                @if (!$executableAction->isLabelHidden())
-                    {{ $executableAction->getLabel() }}
-                @endif
-            </x-forms::actions.action>
+            @if (!$executableAction->isLabelHidden())
+                {{ $executableAction }}
+            @endif
         @endforeach
     </div>
-</x-forms::field-wrapper>
+</x-dynamic-component>
