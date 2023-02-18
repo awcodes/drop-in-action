@@ -18,7 +18,7 @@
         @endif
     >
         @foreach ($getExecutableActions() as $executableAction)
-            @if (!$executableAction->isLabelHidden())
+            @if (! $executableAction->isHidden())
                 {{ $executableAction }}
             @endif
         @endforeach
