@@ -50,6 +50,13 @@
             "@test:phpstan"
         ]
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Awcodes\\DropInAction\\DropInActionServiceProvider"
+            ]
+        }
+    },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
