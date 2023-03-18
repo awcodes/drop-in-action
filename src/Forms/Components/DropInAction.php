@@ -10,8 +10,8 @@ use Illuminate\Support\Arr;
 class DropInAction extends Field
 {
     /** @var array<Action|Closure> */
-    protected array $actions          = [];
-    private array   $evaluatedActions = [];
+    protected array $actions = [];
+    private array $evaluatedActions = [];
 
     protected string $view = 'drop-in-action::components.drop-in-action';
 
@@ -32,14 +32,21 @@ class DropInAction extends Field
     /** @return array<Action|Closure> */
     public function getExecutableActions(bool $reevaluate = false): array
     {
-        if ((! $reevaluate) && $this->evaluatedActions) {
+        if ((!$reevaluate) && $this->evaluatedActions) {
             return $this->evaluatedActions;
         }
 
         $this->evaluatedActions = [];
 
         foreach ($this->actions as $action) {
-            $this->evaluatedActions[] = $this->evaluate($action)?->component($this);
+            $evaluatedAction = $this->evaluate($action)?->component($this);
+
+            // To add compatibility with base \Filament\Forms\Components\Actions\Action
+            if (!$evaluatedAction instanceof \Awcodes\DropInAction\Forms\Components\Actions\Action) {
+                $evaluatedAction->view('forms::button');
+            }
+
+            $this->evaluatedActions[] = $evaluatedAction;
         }
 
         return $this->evaluatedActions;
