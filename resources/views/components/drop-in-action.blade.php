@@ -22,7 +22,7 @@
             <x-forms::actions.action
                 :action="$executableAction"
                 class="flex items-center"
-                component="forms::button"
+                component="{{$executableAction->getView()}}"
             >
                 @if (!$executableAction->isLabelHidden())
                     {{ $executableAction->getLabel() }}
