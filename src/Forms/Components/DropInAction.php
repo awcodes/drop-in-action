@@ -39,7 +39,11 @@ class DropInAction extends Field
         $this->evaluatedActions = [];
 
         foreach ($this->actions as $action) {
-            $this->evaluatedActions[] = $this->evaluate($action)?->component($this);
+            $actions = $this->evaluate($action);
+
+            foreach (Arr::wrap($actions) as $action) {
+                $this->evaluatedActions[] = $this->evaluate($action)?->component($this);
+            }
         }
 
         return $this->evaluatedActions;
