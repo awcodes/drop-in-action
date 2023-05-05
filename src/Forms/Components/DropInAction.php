@@ -41,8 +41,8 @@ class DropInAction extends Field
         foreach ($this->actions as $action) {
             $actions = $this->evaluate($action);
 
-            foreach (Arr::wrap($actions) as $action) {
-                $this->evaluatedActions[] = $this->evaluate($action)?->component($this);
+            foreach (Arr::wrap($actions) as $nestedAction) {
+                $this->evaluatedActions[] = $this->evaluate($nestedAction)?->component($this);
             }
         }
 
