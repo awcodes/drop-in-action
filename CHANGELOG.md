@@ -2,6 +2,18 @@
 
 All notable changes to `drop-in-action` will be documented in this file.
 
+## v0.2.1 - 2023-05-05
+
+### What's Changed
+
+- permit closures to return more than one action by @ceejayoz in https://github.com/awcodes/drop-in-action/pull/5
+
+### New Contributors
+
+- @ceejayoz made their first contribution in https://github.com/awcodes/drop-in-action/pull/5
+
+**Full Changelog**: https://github.com/awcodes/drop-in-action/compare/v0.2.0...v0.2.1
+
 ## v0.2.0 - 2023-02-16
 
 ### What's Changed
