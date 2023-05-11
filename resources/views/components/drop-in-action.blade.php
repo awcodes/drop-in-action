@@ -1,4 +1,5 @@
-<x-forms::field-wrapper
+<x-dynamic-component
+    :component="$getFieldWrapperView()"
     :id="$getId()"
     :label="$getLabel()"
     :label-sr-only="$isLabelHidden()"
@@ -30,4 +31,4 @@
             </x-forms::actions.action>
         @endforeach
     </div>
-</x-forms::field-wrapper>
+</x-dynamic-component>
