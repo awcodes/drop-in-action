@@ -2,6 +2,18 @@
 
 All notable changes to `drop-in-action` will be documented in this file.
 
+## v0.2.2 - 2023-05-12
+
+### What's Changed
+
+- Enable usage of ->inlineLabel() by switching to x-dynamic-component. by @Capevace in https://github.com/awcodes/drop-in-action/pull/7
+
+### New Contributors
+
+- @Capevace made their first contribution in https://github.com/awcodes/drop-in-action/pull/7
+
+**Full Changelog**: https://github.com/awcodes/drop-in-action/compare/v0.2.1...v0.2.2
+
 ## v0.2.1 - 2023-05-05
 
 ### What's Changed
