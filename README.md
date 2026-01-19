@@ -1,6 +1,6 @@
 # Drop-in Action for Filament
 
-> **Warning**
+> [!Warning]
 > With the release of Filament v3 this plugin is no longer necessary. Support will be maintained for v2 projects. You can read more about ["anonymous" actions](https://filamentphp.com/docs/3.x/forms/actions#adding-anonymous-actions-to-a-form-without-attaching-them-to-a-component) on the Filament Docs.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/awcodes/drop-in-action.svg?style=flat-square)](https://packagist.org/packages/awcodes/drop-in-action)
